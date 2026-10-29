@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registro de estudiantes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>Registro de estudiantes</h1></header>
+<main>
+<form id="form" novalidate>
+  <div class="campo"><label for="cedula">Cédula</label><input id="cedula" maxlength="10" inputmode="numeric" placeholder="0912345678"><small class="error"></small></div>
+  <div class="campo"><label for="apellidos">Apellidos</label><input id="apellidos" placeholder="Pérez Mora"><small class="error"></small></div>
+  <div class="campo"><label for="nombres">Nombres</label><input id="nombres" placeholder="Ana María"><small class="error"></small></div>
+  <div class="campo ancho"><label for="direccion">Dirección</label><input id="direccion" placeholder="Av. Principal 123 y Calle 5"><small class="error"></small></div>
+  <div class="campo"><label for="telefono">Teléfono</label><input id="telefono" maxlength="10" inputmode="tel" placeholder="0987654321"><small class="error"></small></div>
+  <div class="campo"><label for="correo">Correo electrónico</label><input id="correo" type="text" placeholder="ana@correo.com"><small class="error"></small></div>
+  <div class="campo"><label for="facultad">Facultad</label>
+    <select id="facultad"><option value="">Seleccione…</option><option>Ciencias Administrativas</option><option>Ingeniería</option><option>Ciencias Médicas</option><option>Jurisprudencia</option><option>Arquitectura</option></select><small class="error"></small></div>
+  <div class="campo"><label for="nivel">Nivel</label>
+    <select id="nivel"><option value="">Seleccione…</option></select><small class="error"></small></div>
+  <div class="campo"><label for="paralelo">Paralelo</label>
+    <select id="paralelo"><option value="">Seleccione…</option><option>A</option><option>B</option><option>C</option><option>D</option></select><small class="error"></small></div>
+  <div class="acciones ancho"><button type="submit">Guardar estudiante</button><button type="reset" class="sec">Limpiar</button></div>
+</form>
+<section>
+  <div class="barra"><h2>Estudiantes registrados (<span id="total">0</span>)</h2>
+  <input id="buscar" placeholder="Buscar por cédula o apellido"></div>
+  <div class="tabla-wrap"><table><thead><tr><th>Cédula</th><th>Apellidos</th><th>Nombres</th><th>Dirección</th><th>Teléfono</th><th>Correo</th><th>Facultad</th><th>Nivel</th><th>Par.</th><th></th></tr></thead><tbody id="lista"></tbody></table></div>
+</section>
+</main>
+<div id="aviso" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
