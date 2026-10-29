@@ -1,19 +1,27 @@
+/* Colores principales (variables reutilizables) */
 :root{--tinta:#1b2a41;--fondo:#eef1f6;--papel:#fff;--acento:#0f6e6e;--error:#b3261e;--borde:#c5cdd9}
+/* Reglas generales */
 *{box-sizing:border-box}
 body{margin:0;font:16px/1.5 "Segoe UI",system-ui,sans-serif;background:var(--fondo);color:var(--tinta)}
+/* Encabezado */
 header{background:var(--tinta);color:#fff;padding:1.5rem clamp(1rem,5vw,3rem)}
 header h1{margin:0;font-size:1.8rem}header p{margin:.25rem 0 0;opacity:.8}
+/* Contenedor principal y formulario (cuadrícula adaptable) */
 main{max-width:1100px;margin:0 auto;padding:1.5rem 1rem 3rem}
 form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;background:var(--papel);padding:1.5rem;border-radius:6px;border:1px solid var(--borde)}
 .ancho{grid-column:1/-1}
+/* Etiquetas y controles de entrada */
 label{display:block;font-weight:600;margin-bottom:.25rem}
 input,select{width:100%;padding:.6rem;border:1px solid var(--borde);border-radius:4px;font:inherit;background:#fff;color:inherit}
 input:focus,select:focus,button:focus-visible{outline:3px solid var(--acento);outline-offset:1px}
+/* Estados de validación: borde rojo (inválido), verde (válido) y mensaje de error */
 .invalido{border-color:var(--error)}.valido{border-color:var(--acento)}
 .error{display:block;min-height:1.2rem;color:var(--error);font-size:.85rem}
+/* Botones */
 .acciones{display:flex;gap:.75rem}
 button{padding:.65rem 1.2rem;border:0;border-radius:4px;background:var(--acento);color:#fff;font:inherit;font-weight:600;cursor:pointer}
 button.sec{background:transparent;color:var(--tinta);border:1px solid var(--borde)}
+/* Listado: barra de título y buscador, tabla con desplazamiento horizontal */
 section{margin-top:2rem}
 .barra{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
 .barra h2{margin:0}.barra input{max-width:280px}
@@ -23,6 +31,8 @@ th,td{padding:.6rem .75rem;text-align:left;border-bottom:1px solid var(--fondo);
 th{background:var(--fondo)}
 td.vacio{text-align:center;color:#667}
 td button{background:var(--error);padding:.3rem .6rem;font-size:.8rem}
+/* Aviso temporal flotante */
 #aviso{position:fixed;bottom:1rem;left:50%;transform:translateX(-50%);background:var(--tinta);color:#fff;padding:.7rem 1.2rem;border-radius:4px;opacity:0;transition:opacity .2s;pointer-events:none}
 #aviso.ver{opacity:1}
+/* Accesibilidad: sin animaciones si el usuario las desactiva */
 @media (prefers-reduced-motion:reduce){#aviso{transition:none}}
